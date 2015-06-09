@@ -3,40 +3,53 @@
 <html>
 	<head>
 		<!-- Quick test for Leaflet.js and Instagram mapping -->
-		<title>Instagram Map</title>
+		<title>LiSC Instagram</title>
+
 		<link rel="stylesheet" href="lib/leaflet/leaflet.css" />
 		<link rel="stylesheet" href="lib/jquery.fancybox.css" />
 		<link rel="stylesheet" href="lib/MarkerCluster.css" />
 		<link rel="stylesheet" href="lib/leaflet.instagram-example-map.css" />
 		<link rel="stylesheet" href="lib/Leaflet.Instagram.css" />
+		<link rel="stylesheet" href="style.css" />
 		
 	</head>
 
 	<body>
-		<div id="map" style="width: 600px; height: 400px"></div>
+		<div id="content">
+			&nbsp;
 
-		<!-- All libraries are stored in lib folder.  -->
-		<script src="lib/jquery-2.1.0.min.js"></script>
-		<script src="lib/fancybox/source/jquery.fancybox.pack.js"></script>
-		<script src="lib/reqwest.min.js"></script>
-		<script src="dist/leaflet.js"></script>
-		<script src="lib/leaflet.markercluster.js"></script>
-		<script src="lib/Leaflet.Instagram.Fancybox.Cluster.js"></script>
-		
-		<script>
-			var map = L.map('map').setView([51.505, -0.09], 13);
+			<div id="map" style="width: 800px; height: 600px"></div>
 
-			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-			    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-			    maxZoom: 18,
-			    id: 'tfeltwell.md7jnll6',
-			    accessToken: 'pk.eyJ1IjoidGZlbHR3ZWxsIiwiYSI6IjIwZjQzOWM1NTUxZTc3ZTNlZTU3NmVlOWMzYjBmMzIwIn0.CNTLHsphlqYYruwDdT9JsQ'
-			}).addTo(map);
+			<!-- All libraries are stored in lib folder.  -->
+			<script src="lib/jquery-2.1.0.min.js"></script>
+			<script src="lib/fancybox/source/jquery.fancybox.pack.js"></script>
+			<script src="lib/reqwest.min.js"></script>
+			<script src="dist/leaflet.js"></script>
+			<script src="lib/leaflet.markercluster.js"></script>
+			<script src="lib/Leaflet.Instagram.Fancybox.Cluster.js"></script>
+			
+			<script>
+				var map = L.map('map').fitBounds([[58.950, -15.161], [49.611, 7.910]]);
 
-			var pin= L.marker([51.5, -0.09]).addTo(map); 
+				//  Mapbox is set up using my (TF) access tokens
 
-		</script>
+				L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+				    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+				    maxZoom: 18,
+				    id: 'tfeltwell.md7jnll6',
+				    accessToken: 'pk.eyJ1IjoidGZlbHR3ZWxsIiwiYSI6IjIwZjQzOWM1NTUxZTc3ZTNlZTU3NmVlOWMzYjBmMzIwIn0.CNTLHsphlqYYruwDdT9JsQ'
+				}).addTo(map);
 
+				// Get recent media for hashtag
+				L.instagram('https://api.instagram.com/v1/tags/indyref/media/recent?access_token=1703072573.1677ed0.85963ffa361c473db0fa689bcc797205').addTo(map);
+
+				// Get recent media of a user (has to be geotagged)
+				// Got to http://jelled.com/instagram/lookup-user-id to find user IDs
+				// L.instagram('https://api.instagram.com/v1/users/22473302/media/recent/?access_token=1703072573.1677ed0.85963ffa361c473db0fa689bcc797205').addTo(map);
+			</script>
+
+			<p id="blurb">Current visualising recent posts, so limited to around 30 maximum (not all will be geotagged)</p>
+		</div>
 	</body>
 
 </html>

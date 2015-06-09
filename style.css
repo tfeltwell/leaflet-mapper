@@ -1,1 +1,14 @@
-#map { height: 180px; }
+body {
+	background-color: #eee;
+}
+
+#content { 
+			width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+#blurb {
+		font-family: sans-serif;
+		text-align: center;
+}
