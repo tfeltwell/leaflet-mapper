@@ -8,11 +8,11 @@ You should sign up to [http://instagram.com/developer](http://instagram.com/deve
 
 Tech
 =======
-Mapbox for map
-Leaflet + MarkerCluster, Instagram plugins
-Fancybox
-jQuery
-reqwest
+* Mapbox for map
+* Leaflet + MarkerCluster, Instagram plugins
+* Fancybox
+* jQuery
+* reqwest
 
 Instructions
 ============
