@@ -1,0 +1,42 @@
+<!-- Created by Tom Feltwell, 09/06/15 -->
+<!-- Purpose: Pull Instagram images, visualise on a map. Powered by leaflet, fancybox and some plugins -->
+<html>
+	<head>
+		<!-- Quick test for Leaflet.js and Instagram mapping -->
+		<title>Instagram Map</title>
+		<link rel="stylesheet" href="lib/leaflet/leaflet.css" />
+		<link rel="stylesheet" href="lib/jquery.fancybox.css" />
+		<link rel="stylesheet" href="lib/MarkerCluster.css" />
+		<link rel="stylesheet" href="lib/leaflet.instagram-example-map.css" />
+		<link rel="stylesheet" href="lib/Leaflet.Instagram.css" />
+		
+	</head>
+
+	<body>
+		<div id="map" style="width: 600px; height: 400px"></div>
+
+		<!-- All libraries are stored in lib folder.  -->
+		<script src="lib/jquery-2.1.0.min.js"></script>
+		<script src="lib/fancybox/source/jquery.fancybox.pack.js"></script>
+		<script src="lib/reqwest.min.js"></script>
+		<script src="dist/leaflet.js"></script>
+		<script src="lib/leaflet.markercluster.js"></script>
+		<script src="lib/Leaflet.Instagram.Fancybox.Cluster.js"></script>
+		
+		<script>
+			var map = L.map('map').setView([51.505, -0.09], 13);
+
+			L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+			    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			    maxZoom: 18,
+			    id: 'tfeltwell.md7jnll6',
+			    accessToken: 'pk.eyJ1IjoidGZlbHR3ZWxsIiwiYSI6IjIwZjQzOWM1NTUxZTc3ZTNlZTU3NmVlOWMzYjBmMzIwIn0.CNTLHsphlqYYruwDdT9JsQ'
+			}).addTo(map);
+
+			var pin= L.marker([51.5, -0.09]).addTo(map); 
+
+		</script>
+
+	</body>
+
+</html>
