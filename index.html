@@ -2,8 +2,9 @@
 <!-- Purpose: Pull Instagram images, visualise on a map. Powered by leaflet, fancybox and some plugins -->
 <html>
 	<head>
-		<!-- Quick test for Leaflet.js and Instagram mapping -->
-		<title>LiSC Instagram</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<title>Bad Camberg Euro Bug-In Trip 2015</title>
 
 		<link rel="stylesheet" href="lib/leaflet/leaflet.css" />
 		<link rel="stylesheet" href="lib/jquery.fancybox.css" />
@@ -18,37 +19,54 @@
 		<div id="content">
 			&nbsp;
 
-			<div id="map" style="width: 800px; height: 600px"></div>
+			<div id="map"></div>
 
 			<!-- All libraries are stored in lib folder.  -->
 			<script src="lib/jquery-2.1.0.min.js"></script>
 			<script src="lib/fancybox/source/jquery.fancybox.pack.js"></script>
 			<script src="lib/reqwest.min.js"></script>
-			<script src="dist/leaflet.js"></script>
+			<script src="lib/leaflet/leaflet.js"></script>
 			<script src="lib/leaflet.markercluster.js"></script>
 			<script src="lib/Leaflet.Instagram.Fancybox.Cluster.js"></script>
 			
 			<script>
-				var map = L.map('map').fitBounds([[58.950, -15.161], [49.611, 7.910]]);
+				var map = L.map('map').fitBounds([[51.666, 2.016], [48.785, 9.657]]);
 
 				//  Mapbox is set up using my (TF) access tokens
 
 				L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
 				    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
 				    maxZoom: 18,
-				    id: 'tfeltwell.md7jnll6',
+				    id: 'tfeltwell.mdfbe391',
 				    accessToken: 'pk.eyJ1IjoidGZlbHR3ZWxsIiwiYSI6IjIwZjQzOWM1NTUxZTc3ZTNlZTU3NmVlOWMzYjBmMzIwIn0.CNTLHsphlqYYruwDdT9JsQ'
 				}).addTo(map);
 
-				// Get recent media for hashtag
-				L.instagram('https://api.instagram.com/v1/tags/indyref/media/recent?access_token=1703072573.1677ed0.85963ffa361c473db0fa689bcc797205').addTo(map);
+				var hull = L.marker([53.7408, -0.2788]).addTo(map);
+				var ferry1 = L.marker([51.9368, 4.1461]).addTo(map); 
+				var bbt = L.marker([51.29981, 4.55234]).addTo(map);
+				var camberg = L.marker([50.29957, 8.26730]).addTo(map); 
+				var luxembourg = L.marker([49.9076, 6.1888]).addTo(map); 
+				var ebi = L.marker([50.05618, 4.30697]).addTo(map); 
+				var ferry2 = L.marker([51.9368, 4.1461]).addTo(map); 
 
-				// Get recent media of a user (has to be geotagged)
-				// Got to http://jelled.com/instagram/lookup-user-id to find user IDs
-				// L.instagram('https://api.instagram.com/v1/users/22473301/media/recent/?access_token=1703072573.1677ed0.85963ffa361c473db0fa689bcc797205').addTo(map);
+				// Lets add info to each one of these
+				ferry1.bindPopup("Ferry arrives 7:30am");
+				bbt.bindPopup("BBT Cruise to Bad Camberg");
+				camberg.bindPopup("Bad Camberg town");
+				luxembourg.bindPopup("Camping in Luxembourg");
+				ebi.bindPopup("6th Internation European Bug-In");
+
+
+				var line1 = L.polyline([[51.9368, 4.1461],[51.29981, 4.55234]], {color: 'red', opacity: 0.3}).addTo(map);
+				var line2 = L.polyline([[51.29981, 4.55234],[50.29957, 8.26730]], {color: 'red', opacity: 0.3}).addTo(map);
+				var line3 = L.polyline([[50.29957, 8.26730],[49.9076, 6.1888]], {color: 'red', opacity: 0.3}).addTo(map);
+				var line4 = L.polyline([[49.9076, 6.1888],[50.05618, 4.30697]], {color: 'red', opacity: 0.3}).addTo(map);
+				var line5 = L.polyline([[50.05618, 4.30697],[51.9368, 4.1461]], {color: 'red', opacity: 0.3}).addTo(map);
+				var line5 = L.polyline([[51.9368, 4.1461],[53.7408, -0.2788]], {color: 'red', opacity: 0.3}).addTo(map);
+
 			</script>
 
-			<p id="blurb">Current visualising recent posts, so limited to around 30 maximum (not all will be geotagged)</p>
+			<p id="blurb">Trip around europe, Summer 2015.</p>
 		</div>
 	</body>
 
