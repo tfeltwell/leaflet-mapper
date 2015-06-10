@@ -77,3 +77,23 @@ var line3 = L.polyline([[50.29957, 8.26730],[49.9076, 6.1888]], lineVars).addTo(
 var line4 = L.polyline([[49.9076, 6.1888],[50.05618, 4.30697]], lineVars).addTo(map);
 var line5 = L.polyline([[50.05618, 4.30697],[51.9368, 4.1461]], lineVars).addTo(map);
 var line5 = L.polyline([[51.9368, 4.1461],[53.7408, -0.2788]], lineVars).addTo(map);
+
+var geojsonFeature = {
+  "type": "Feature",
+  "properties": {
+      "name": "PARISOMA"
+  },
+  "geometry": {
+      "type": "Point",
+      "coordinates": [-122.41598, 37.77349]
+  }
+};
+
+var geojsonLayer = L.geoJson(
+  geojsonFeature, 
+  {
+    onEachFeature: function(feature, layer) { layer.bindPopup(feature.properties.name); }
+  }
+);
+
+map.addLayer(geojsonLayer);
