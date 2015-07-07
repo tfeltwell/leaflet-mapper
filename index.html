@@ -1,14 +1,15 @@
 <!-- Created by Tom Feltwell, 09/06/15 -->
-<!-- Purpose: Visualise road trips or other map based stuff -->
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<title>Bad Camberg Euro Bug-In Trip 2015</title>
+		<title>British HCI 2015</title>
 
 		<link rel="stylesheet" href="lib/leaflet/leaflet.css" />
 		<link rel="stylesheet" href="css/ionicons.css">
 		<link rel="stylesheet" href="css/leaflet.awesome-markers.css">
+		<link rel="stylesheet" href="css/MarkerCluster.css">
+		<link rel="stylesheet" href="css/MarkerCluster.Default.css">
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 
@@ -22,17 +23,16 @@
 			<script src="lib/jquery-2.1.0.min.js"></script>
 			<script src="lib/leaflet/leaflet.js"></script>
 			<script src="lib/leaflet.awesome-markers.js"></script>
+			<script src="lib/leaflet.markercluster-src.js"></script>
+			<script src="js/data.js"></script>
 			<script src="js/map.js"></script>
 
-			<p id="blurb">Trip to Bad Camberg &amp; European Bug-In VW Shows. <br /><i>June 2015</i>
+			<p id="blurb">British HCI 2015 - Lincoln
 				<ol class="center">
-					<li><a href='#' id='hte'>Hull <i class="icon ion-ios-arrow-thin-right"></i> Europoort Ferry</a></li>
-					<li><a href='#' id="bbt">BBT Cruise to Bad Camberg</a></li>
-					<li><a href='#' id='camberg'>Bad Camberg Treffen 2015</a></li>
-					<li><a href='#' id='rhine'>Cruise up Rhine valley</a></li>
-					<li><a href='#' id='camping'>Camping in Luxembourg</a></li>
-					<li><a href='#' id='ebi'>European Bug-In</a></li>
-					<li><a href='#' id='eth'>Europoort <i class="icon ion-ios-arrow-thin-right"></i> Hull Ferry</a></li>
+					<li><a href='#' id="all">Toggle all</a></li>
+					<li><a href='#' id="1">Food</a></li>
+					<li><a href='#' id="2">Drink</a></li>
+					<li><a href='#' id="3">Sights'n' Misc</a></li>
 				</ol>	
 			</p>
 
@@ -40,7 +40,6 @@
 				<p> <i>Created by <a href="http://tom.feltwell.org" class="subtle">Tom Feltwell</a></i> </p>
 			</div>
 		</div>
-
 
 		<script src="js/focus.js"></script>
  

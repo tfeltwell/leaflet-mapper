@@ -1,7 +1,23 @@
-$('#hte').click( function() {  map.panTo([53.7408, -0.2788]); hull.openPopup(); return false; } ); 
-$('#bbt').click( function() {  map.panTo([51.29981, 4.55234]); bbt.openPopup(); return false; } ); 
-$('#camberg').click( function() {  map.panTo([50.29957, 8.26730]); camberg.openPopup(); return false; } );
-$('#rhine').click( function() {  map.panTo([50.1531, 7.7103]); rhine.openPopup(); return false; } );  
-$('#camping').click( function() {  map.panTo([49.9076, 6.1888]); luxembourg.openPopup(); return false; } ); 
-$('#ebi').click( function() {  map.panTo([50.05618, 4.30697]); ebi.openPopup(); return false; } ); 
-$('#eth').click( function() {  map.panTo([51.9368, 4.1461]); europport.openPopup(); return false; } ); 
+$('#all').click( function() {  
+	if(layerControls[0]==false){
+		map.addLayer(food);map.addLayer(pub);map.addLayer(tourist);layerControls[0]=true;layerControls[1]=true;layerControls[2]=true;} 
+	else {map.removeLayer(food);map.removeLayer(pub);map.removeLayer(tourist);layerControls[0]=false;layerControls[1]=false;layerControls[2]=false;}
+	return false; } ); 
+
+$('#1').click( function() {  
+	if(layerControls[0]==false){
+		map.addLayer(food);layerControls[0]=true;} 
+	else {map.removeLayer(food); layerControls[0]=false;}
+	return false; } ); 
+
+$('#2').click( function() {  
+	if(layerControls[1]==false){
+		map.addLayer(pub);layerControls[1]=true;} 
+	else {map.removeLayer(pub); layerControls[1]=false;}
+	return false; } ); 
+
+$('#3').click( function() {  
+	if(layerControls[2]==false){
+		map.addLayer(tourist);layerControls[2]=true;} 
+	else {map.removeLayer(tourist); layerControls[2]=false;}
+		return false; } ); 
