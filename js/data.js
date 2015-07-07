@@ -23,7 +23,8 @@ var foodPoints = [
 	[53.23112, -0.55055,"Sainsburys Local",7],
 	[53.23066, -0.54000,"Tesco Express",7],
 	[53.22434, -0.55536,"Morrison\'s Supermarket",7],
-	[53.22552, -0.54288,"Tesco Express",7]
+	[53.22552, -0.54288,"Tesco Express",7],
+	[53.24036, -0.54564,"Burton Road Fish &amp; Chip Shop",3]
 ];
 
 var pubPoints = [
@@ -32,6 +33,7 @@ var pubPoints = [
 	[53.23403, -0.53887,"Widow Cullens Well",1],
 	[53.23435, -0.53860,"Magna Carta",1],
 	[53.23589, -0.54280,"The Victoria",1],
+	[53.23619, -0.54247,"The Strugglers Inn",1],
 	[53.23160, -0.54090,"The Tap &amp; Spile",1],
 	[53.23185, -0.53893,"The Strait and Narrow",1],
 	[53.21643, -0.54589,"The Golden Eagle",1],
@@ -55,5 +57,6 @@ var touristPoints = [
 	[53.22534, -0.54549,"Cash point",5],
 	[53.22761, -0.54365,"Swans",4],
 	[53.23003, -0.54462,"Co-op Pharmacy",8],
-	[53.23027, -0.54535,"Lloyds Pharmacy",8]
+	[53.23027, -0.54535,"Lloyds Pharmacy",8],
+	[53.23112, -0.55055,"Cash point",5]
 ];
