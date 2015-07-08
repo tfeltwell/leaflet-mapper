@@ -24,7 +24,7 @@ var markerTypes = [
   new L.AwesomeMarkers.icon({icon: 'icon ion-medkit',markerColor: 'red'})
 ];
 
-var layerControls = [ false, false, false];
+var layerControls = [false, false, false]; // Food, Drink, Sights & Misc
 
 // Conf essential
 for (var i = 0; i < mainPoints.length; i++){
@@ -36,7 +36,7 @@ for (var i = 0; i < mainPoints.length; i++){
   marker.addTo(map)
 }
 
-var food = L.markerClusterGroup();
+var food = L.markerClusterGroup({ disableClusteringAtZoom: 17});
 for (var i = 0; i < foodPoints.length; i++){
   var a = foodPoints[i];
   var title = a[2];
@@ -46,7 +46,7 @@ for (var i = 0; i < foodPoints.length; i++){
   food.addLayer(marker);
 }
 
-var pub = L.markerClusterGroup();
+var pub = L.markerClusterGroup({ disableClusteringAtZoom: 17});
 for (var i = 0; i < pubPoints.length; i++){
   var a = pubPoints[i];
   var title = a[2];
@@ -56,7 +56,7 @@ for (var i = 0; i < pubPoints.length; i++){
   pub.addLayer(marker);
 }
 
-var tourist = L.markerClusterGroup();
+var tourist = L.markerClusterGroup({ disableClusteringAtZoom: 17});
 for (var i = 0; i < touristPoints.length; i++){
   var a = touristPoints[i];
   var title = a[2];
@@ -69,8 +69,10 @@ for (var i = 0; i < touristPoints.length; i++){
 // Controls to toggle layers
 $('#all').click( function() {  
   if(layerControls[0]==false){
-    map.addLayer(food);map.addLayer(pub);map.addLayer(tourist);layerControls[0]=true;layerControls[1]=true;layerControls[2]=true;} 
-  else {map.removeLayer(food);map.removeLayer(pub);map.removeLayer(tourist);layerControls[0]=false;layerControls[1]=false;layerControls[2]=false;}
+    map.addLayer(food);map.addLayer(pub);map.addLayer(tourist);layerControls[0]=true;layerControls[1]=true;layerControls[2]=true;
+    $("#all").removeClass("btn-default").addClass("btn-success");} 
+  else {map.removeLayer(food);map.removeLayer(pub);map.removeLayer(tourist);layerControls[0]=false;layerControls[1]=false;layerControls[2]=false;
+    $("#all").removeClass("btn-success").addClass("btn-default");}
   return false; } ); 
 
 $('#1').click( function() {  
