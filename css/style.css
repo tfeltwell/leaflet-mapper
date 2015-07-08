@@ -37,3 +37,8 @@ a:visited {
     text-decoration: none;
     color: #000;
 }
+
+.awesome-marker i {
+        font-size: 18px;
+        margin-top: 8px;
+    }

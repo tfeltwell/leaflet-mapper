@@ -24,7 +24,11 @@ var foodPoints = [
 	[53.23066, -0.54000,"Tesco Express",7],
 	[53.22434, -0.55536,"Morrison\'s Supermarket",7],
 	[53.22552, -0.54288,"Tesco Express",7],
-	[53.24036, -0.54564,"Burton Road Fish &amp; Chip Shop",3]
+	[53.22629, -0.54449,"Spar",7],
+	[53.24036, -0.54564,"Burton Road Fish &amp; Chip Shop",3],
+	[53.23419, -0.53881,"Brown\'s Pie Shop",3],
+	[53.23647, -0.54305,"The Bronze Pig",3],
+	[53.23771, -0.54383,"The Old Bakery",3]
 ];
 
 var pubPoints = [
