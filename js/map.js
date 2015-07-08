@@ -36,7 +36,7 @@ for (var i = 0; i < mainPoints.length; i++){
   marker.addTo(map)
 }
 
-var food = L.markerClusterGroup({ disableClusteringAtZoom: 17});
+var food = L.markerClusterGroup({ disableClusteringAtZoom: 16});
 for (var i = 0; i < foodPoints.length; i++){
   var a = foodPoints[i];
   var title = a[2];
@@ -46,7 +46,7 @@ for (var i = 0; i < foodPoints.length; i++){
   food.addLayer(marker);
 }
 
-var pub = L.markerClusterGroup({ disableClusteringAtZoom: 17});
+var pub = L.markerClusterGroup({ disableClusteringAtZoom: 16});
 for (var i = 0; i < pubPoints.length; i++){
   var a = pubPoints[i];
   var title = a[2];
@@ -56,7 +56,7 @@ for (var i = 0; i < pubPoints.length; i++){
   pub.addLayer(marker);
 }
 
-var tourist = L.markerClusterGroup({ disableClusteringAtZoom: 17});
+var tourist = L.markerClusterGroup({ disableClusteringAtZoom: 16});
 for (var i = 0; i < touristPoints.length; i++){
   var a = touristPoints[i];
   var title = a[2];
