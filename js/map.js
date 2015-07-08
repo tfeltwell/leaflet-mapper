@@ -1,7 +1,7 @@
 // Created 10/06/15 by Tom Feltwell
 
 var latlng = L.latLng(53.2295, -0.5437);
-var map = L.map('map', {zoom: 16, center: latlng});
+var map = L.map('map', {zoom: 15, center: latlng});
 
 //  Mapbox is set up using my (TF) access tokens
 
